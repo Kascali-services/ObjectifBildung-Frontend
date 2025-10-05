@@ -1,2 +1,2 @@
 # ObjectifBildung-Frontend
-the frontend repository of the "ObjectifBildung" project
+The frontend repository of the "ObjectifBildung" project
