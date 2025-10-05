@@ -1,5 +1,6 @@
 # ObjectifBildung-Frontend
-the frontend repository of the "ObjectifBildung" project
+
+## The frontend repository of the "ObjectifBildung" project
 
 ## Project Setup
 
@@ -35,3 +36,5 @@ Run `ng generate component component-name` to generate a new component. You can 
 ### Further Help
 
 To get more help on the Angular CLI use `ng help` or check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+
