@@ -1,12 +1,13 @@
 import {Component} from '@angular/core';
 import {AuthService} from '../../../core/services/auth.service';
 import {FormsModule} from '@angular/forms';
-import {Router} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-longin-page',
   imports: [
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   templateUrl: './longin-page.component.html',
   styleUrl: './longin-page.component.scss'

@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject} from 'rxjs';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({providedIn: 'root'})
 export class AuthService {
   private isLogged$ = new BehaviorSubject<boolean>(false);
 
@@ -25,4 +25,15 @@ export class AuthService {
   isAuthenticated(): boolean {
     return this.isLogged$.getValue();
   }
+
+  register(email: string, password: string): boolean {
+    // Simule une inscription sans backend
+    if (email && password && email.includes('@')) {
+      // Tu pourrais stocker temporairement l'utilisateur ici si besoin
+      this.isLogged$.next(true); // Connecte automatiquement après inscription
+      return true;
+    }
+    return false;
+  }
+
 }

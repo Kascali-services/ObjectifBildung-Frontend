@@ -46,9 +46,10 @@
             {{ translations.auth?.login || 'Connexion' }}
           </button>
 
-          <a href="#" class="btn btn-gradient text-white px-4 py-2 fw-semibold rounded-pill shadow-sm">
+          <button class="btn btn-gradient text-white px-4 py-2 fw-semibold rounded-pill shadow-sm"
+                  (click)="navigateToRegister()">
             {{ translations.auth?.join || 'Rejoindre' }}
-          </a>
+          </button>
         </ng-container>
 
         <ng-template #userMenu>
