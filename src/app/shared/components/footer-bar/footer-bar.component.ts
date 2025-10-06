@@ -1,12 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { NgForOf } from '@angular/common';
 import { LanguageService } from '../../../core/services/language.service';
 import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-footer-bar',
   standalone: true,
-  imports: [NgForOf],
   templateUrl: './footer-bar.component.html',
   styleUrls: ['./footer-bar.component.scss']
 })
