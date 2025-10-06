@@ -1,0 +1,25 @@
+.btn-gradient {
+  background: linear-gradient(90deg, #0046ff 0%, #c300ff 100%);
+  border: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}
+
+.navbar-nav .nav-link:hover {
+  color: #0046ff;
+}
+img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+main {
+  min-height: 70vh; /* pour que le contenu prenne un peu de hauteur */
+  padding: 2rem 0;  /* espace vertical entre navbar et footer */
+  display: block;
+}
