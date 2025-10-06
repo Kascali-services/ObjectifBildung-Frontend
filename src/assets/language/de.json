@@ -1,0 +1,26 @@
+{
+  "nav_about": "Über ObjectifBildung",
+  "nav_services": "Dienstleistungen",
+  "nav_translate": "Dokumentenübersetzung",
+  "nav_cv": "Lebenslauf-Generator",
+  "nav_dashboard": "Mein Bereich",
+
+  "footer": {
+    "rights": "© 2025 ObjectifBildung. Alle Rechte vorbehalten.",
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen"
+  },
+
+  "auth": {
+    "login": "Anmelden",
+    "logout": "Abmelden",
+    "join": "Beitreten",
+    "settings": "Einstellungen"
+  },
+
+  "language": {
+    "fr": "Französisch",
+    "en": "Englisch",
+    "de": "Deutsch"
+  }
+}

@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="assets/images/objectif.webp" alt="Logo" width="48" class="me-2 img-fluid">
+      <span class="fw-bold fs-4 text-dark">ObjectifBildung</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul *ngIf="!isLogged" class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link fw-semibold text-dark" href="#">
+            {{ translations.nav_about || 'À propos de ObjectifBildung' }}
+          </a>
+        </li>
+      </ul>
+
+      <ul *ngIf="isLogged" class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link fw-semibold text-dark" href="#">
+            {{ translations.nav_dashboard || 'Mon espace' }}
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle fw-semibold text-dark d-flex align-items-center" href="#"
+             id="servicesDropdown"
+             role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ translations.nav_services || 'Services' }}
+            <span class="ms-1 fs-6">&#9662;</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">{{ translations.nav_translate || 'Traduction de documents' }}</a></li>
+            <li><a class="dropdown-item" href="#">{{ translations.nav_cv || 'Générateur de CV' }}</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="d-flex align-items-center">
+        <ng-container *ngIf="!isLogged; else userMenu">
+          <a href="#" class="btn btn-outline-primary me-3 fw-semibold px-3 py-2 rounded-pill"
+             (click)="toggleLogin()">
+            {{ translations.auth?.login || 'Connexion' }}
+          </a>
+          <a href="#" class="btn btn-gradient text-white px-4 py-2 fw-semibold rounded-pill shadow-sm">
+            {{ translations.auth?.join || 'Rejoindre' }}
+          </a>
+        </ng-container>
+
+        <ng-template #userMenu>
+          <div class="dropdown">
+            <a class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle"
+               href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-person-circle fs-4 me-2"></i>
+              <span class="fw-semibold">John</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+              <li><a class="dropdown-item" href="#">{{ translations.auth?.settings || 'Paramètres' }}</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item text-danger" href="#" (click)="toggleLogin()">
+                {{ translations.auth?.logout || 'Déconnexion' }}
+              </a></li>
+            </ul>
+          </div>
+        </ng-template>
+
+        <div class="dropdown ms-3">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="langDropdown"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+            {{ currentLang.toUpperCase() }}
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+            <li><a class="dropdown-item" (click)="changeLang('fr')">Français</a></li>
+            <li><a class="dropdown-item" (click)="changeLang('en')">English</a></li>
+            <li><a class="dropdown-item" (click)="changeLang('de')">Deutsch</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
