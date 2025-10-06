@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import {AfterViewInit, Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {ActivatedRoute, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -9,7 +9,23 @@ import { RouterLink } from '@angular/router';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-export class HomePageComponent {
+export class HomePageComponent implements AfterViewInit {
+  constructor(private route: ActivatedRoute) {
+  }
+
+  ngAfterViewInit() {
+    // Attend que le fragment soit disponible
+    this.route.fragment.subscribe((fragment) => {
+      if (fragment) {
+        // Cherche l'élément avec l'ID correspondant
+        const el = document.getElementById(fragment);
+        if (el) {
+          el.scrollIntoView({behavior: 'smooth'}); // scroll fluide
+        }
+      }
+    });
+  }
+
   services = [
     {
       title: 'Traduction de documents',

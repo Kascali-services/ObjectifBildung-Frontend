@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
   <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="#">
+    <a class="navbar-brand d-flex align-items-center" routerLink="/">
       <img src="assets/images/objectif.webp" alt="Logo" width="48" class="me-2 img-fluid">
       <span class="fw-bold fs-4 text-dark">ObjectifBildung</span>
     </a>
@@ -17,7 +17,12 @@
             {{ translations.nav_about || 'À propos de ObjectifBildung' }}
           </a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item">
+          <a class="nav-link fw-semibold text-dark" routerLink="/" fragment="services-section">
+            {{ translations.nav_services || 'Services' }}
+          </a>
+        </li>
+        <!--<li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle fw-semibold text-dark d-flex align-items-center" href="#"
              id="servicesDropdown"
              role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -28,7 +33,7 @@
             <li><a class="dropdown-item">{{ translations.nav_translate || 'Traduction de documents' }}</a></li>
             <li><a class="dropdown-item">{{ translations.nav_cv || 'Générateur de CV' }}</a></li>
           </ul>
-        </li>
+        </li>-->
       </ul>
 
       <ul *ngIf="isLogged" class="navbar-nav mx-auto mb-2 mb-lg-0">
