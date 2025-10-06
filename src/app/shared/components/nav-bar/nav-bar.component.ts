@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
-import { firstValueFrom } from 'rxjs';
+import { LanguageService } from '../../../core/services/language.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,40 +10,35 @@ import { firstValueFrom } from 'rxjs';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, OnDestroy {
   isLogged = true;
   currentLang = 'fr';
-  translations: {
-    nav_about?: string;
-    nav_services?: string;
-    nav_translate?: string;
-    nav_cv?: string;
-    nav_dashboard?: string;
-  } = {};
+  translations: any = {};
+  private langSub!: Subscription;
+  private translationSub!: Subscription;
 
-  constructor(private http: HttpClient) {}
+  constructor(private languageService: LanguageService) {}
 
   ngOnInit(): void {
-    this.loadLanguage(this.currentLang);
-  }
-
-  async loadLanguage(lang: string): Promise<void> {
-    try {
-      const data = await firstValueFrom(
-        this.http.get<typeof this.translations>(`assets/language/${lang}.json`)
-      );
-      this.translations = data;
+    this.langSub = this.languageService.getLanguage().subscribe(lang => {
       this.currentLang = lang;
-    } catch (error) {
-      console.error('Erreur lors du chargement de la langue :', lang);
-    }
+    });
+
+    this.translationSub = this.languageService.getTranslations().subscribe(data => {
+      this.translations = data;
+    });
   }
 
   changeLang(lang: string): void {
-    this.loadLanguage(lang);
+    this.languageService.setLanguage(lang);
   }
 
   toggleLogin(): void {
     this.isLogged = !this.isLogged;
+  }
+
+  ngOnDestroy(): void {
+    this.langSub?.unsubscribe();
+    this.translationSub?.unsubscribe();
   }
 }

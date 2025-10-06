@@ -1,36 +1,17 @@
-<footer class="footer bg-dark text-light py-5 mt-5">
+<footer class="bg-dark text-light py-5 mt-5">
   <div class="container text-center">
-    <!-- Logo + Nom -->
-    <div class="mb-3 d-flex justify-content-center align-items-center">
-      <img
-        src="/assets/images/logo.png"
-        alt="Logo"
-        width="50"
-        class="me-2 img-fluid"
-      />
+    <div class="mb-3">
+      <img src="assets/images/objectif.webp" alt="Logo" width="48" class="me-2 img-fluid">
       <span class="fw-bold fs-5">ObjectifBildung</span>
     </div>
-
-    <!-- Liens -->
-    <p class="mb-1">{{ translations.footer?.rights }}</p>
+    <p class="mb-1">
+      {{ translations.footer?.rights || '© 2025 ObjectifBildung. Tous droits réservés.' }}
+    </p>
     <a href="#" class="text-light text-decoration-none me-3">
-      {{ translations.footer?.privacy }}
+      {{ translations.footer?.privacy || 'Confidentialité' }}
     </a>
     <a href="#" class="text-light text-decoration-none">
-      {{ translations.footer?.terms }}
+      {{ translations.footer?.terms || "Conditions d'utilisation" }}
     </a>
-
-    <!-- Sélecteur de langue -->
-    <div class="language-switch mt-4">
-      <button
-        *ngFor="let lang of ['fr', 'en', 'de']"
-        class="btn btn-sm mx-1"
-        [class.btn-primary]="language === lang"
-        [class.btn-outline-light]="language !== lang"
-        (click)="changeLanguage(lang)"
-      >
-        {{ lang.toUpperCase() }}
-      </button>
-    </div>
   </div>
 </footer>

@@ -1,36 +1,35 @@
-import {Component} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {NgForOf} from '@angular/common';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { NgForOf } from '@angular/common';
+import { LanguageService } from '../../../core/services/language.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-footer-bar',
-  imports: [
-    NgForOf
-  ],
+  standalone: true,
+  imports: [NgForOf],
   templateUrl: './footer-bar.component.html',
-  styleUrl: './footer-bar.component.scss'
+  styleUrls: ['./footer-bar.component.scss']
 })
-export class FooterBarComponent {
-  language = 'fr';
-  translations: any = {};
+export class FooterBarComponent implements OnInit, OnDestroy {
+  translations: {
+    footer?: {
+      rights?: string;
+      privacy?: string;
+      terms?: string;
+    };
+  } = {};
 
-  constructor(private http: HttpClient) {
-  }
+  private translationSub!: Subscription;
+
+  constructor(private languageService: LanguageService) {}
 
   ngOnInit(): void {
-    this.loadLanguage(this.language);
-  }
-
-  loadLanguage(lang: string): void {
-    this.http.get(`assets/language/${lang}.json`).subscribe({
-      next: (data) => (this.translations = data),
-      error: () => console.error(`Erreur lors du chargement de la langue : ${lang}`)
+    this.translationSub = this.languageService.getTranslations().subscribe(data => {
+      this.translations = data;
     });
   }
 
-  changeLanguage(lang: string): void {
-    this.language = lang;
-    this.loadLanguage(lang);
+  ngOnDestroy(): void {
+    this.translationSub?.unsubscribe();
   }
-
 }
