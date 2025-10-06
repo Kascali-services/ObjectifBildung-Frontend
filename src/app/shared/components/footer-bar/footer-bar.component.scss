@@ -1,7 +1,17 @@
-footer {
+.footer {
   background: linear-gradient(90deg, #002b5c 0%, #0b004b 100%);
-}
-footer a:hover {
-  text-decoration: underline;
-  color: #fff;
+  a {
+    transition: color 0.3s ease;
+    &:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+
+  .language-switch .btn {
+    border-radius: 20px;
+    font-weight: 600;
+    min-width: 50px;
+    transition: all 0.3s ease;
+  }
 }
