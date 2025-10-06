@@ -1,0 +1,33 @@
+.home-wrapper {
+  min-height: 100vh; // ← 100vh pour un centrage vertical parfait
+  background: linear-gradient(135deg, #007bff, #6610f2);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.home-content {
+  max-width: 600px;
+  color: white;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+  }
+}
+
+.btn-light {
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+}
