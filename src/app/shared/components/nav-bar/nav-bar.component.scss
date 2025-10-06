@@ -1,25 +1,28 @@
-.btn-gradient {
-  background: linear-gradient(90deg, #0046ff 0%, #c300ff 100%);
-  border: none;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-}
+.navbar-nav .nav-link,
+.navbar-nav .dropdown-toggle {
+  position: relative;
+  transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  color: #212529;
 
-.btn-gradient:hover {
-  opacity: 0.9;
-  transform: scale(1.03);
-}
+  &:hover {
+    color: #0d6efd;
+  }
 
-.navbar-nav .nav-link:hover {
-  color: #0046ff;
-}
-img {
-  display: inline-block;
-  max-width: 100%;
-  height: auto;
-}
-main {
-  min-height: 70vh; /* pour que le contenu prenne un peu de hauteur */
-  padding: 2rem 0;  /* espace vertical entre navbar et footer */
-  display: block;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background-color: #0d6efd;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
 }

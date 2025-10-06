@@ -1,7 +1,26 @@
 {
+  "nav_about": "About ObjectifBildung",
+  "nav_services": "Services",
+  "nav_translate": "Document Translation",
+  "nav_cv": "CV Generator",
+  "nav_dashboard": "My Dashboard",
+
   "footer": {
     "rights": "© 2025 ObjectifBildung. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use"
+  },
+
+  "auth": {
+    "login": "Log In",
+    "logout": "Log Out",
+    "join": "Join",
+    "settings": "Settings"
+  },
+
+  "language": {
+    "fr": "French",
+    "en": "English",
+    "de": "German"
   }
 }

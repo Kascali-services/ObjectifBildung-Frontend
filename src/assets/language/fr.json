@@ -1,7 +1,26 @@
 {
+  "nav_about": "À propos de ObjectifBildung",
+  "nav_services": "Services",
+  "nav_translate": "Traduction de documents",
+  "nav_cv": "Générateur de CV",
+  "nav_dashboard": "Mon espace",
+
   "footer": {
     "rights": "© 2025 ObjectifBildung. Tous droits réservés.",
     "privacy": "Confidentialité",
     "terms": "Conditions d'utilisation"
+  },
+
+  "auth": {
+    "login": "Connexion",
+    "logout": "Déconnexion",
+    "join": "Rejoindre",
+    "settings": "Paramètres"
+  },
+
+  "language": {
+    "fr": "Français",
+    "en": "English",
+    "de": "Deutsch"
   }
 }
