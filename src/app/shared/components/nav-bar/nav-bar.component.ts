@@ -3,12 +3,12 @@ import {CommonModule} from '@angular/common';
 import {LanguageService} from '../../../core/services/language.service';
 import {Subscription} from 'rxjs';
 import {AuthService} from '../../../core/services/auth.service';
-import {Router} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss']
 })

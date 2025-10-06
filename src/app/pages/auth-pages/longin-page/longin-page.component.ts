@@ -28,7 +28,7 @@ export class LonginPageComponent {
       this.error = 'Identifiants incorrects';
     } else {
       // Redirection ou mise à jour de l'état global
-      this.router.navigate(['/']);
+      this.router.navigate(['/me']);
     }
   }
 }
