@@ -11,7 +11,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="mainNav">
-      <ul *ngIf="!isLogged" class="navbar-nav mx-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link fw-semibold text-dark" href="#">
             {{ translations.nav_about || 'À propos de ObjectifBildung' }}
@@ -20,6 +20,7 @@
       </ul>
 
       <ul *ngIf="isLogged" class="navbar-nav mx-auto mb-2 mb-lg-0">
+
         <li class="nav-item">
           <a class="nav-link fw-semibold text-dark" href="#">
             {{ translations.nav_dashboard || 'Mon espace' }}
