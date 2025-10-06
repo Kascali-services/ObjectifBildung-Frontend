@@ -1,0 +1,23 @@
+<div class="login-wrapper d-flex align-items-center justify-content-center">
+  <div class="login-card card p-4 shadow rounded-4 text-center">
+    <img src="../../../../assets/images/objectif.webp" alt="Logo" width="120" class="mb-3">
+    <h2 class="fw-bold mb-4 text-white">Connexion</h2>
+
+    <div class="mb-3">
+      <input type="email" [(ngModel)]="email" class="form-control" placeholder="Email">
+    </div>
+    <div class="mb-3">
+      <input type="password" [(ngModel)]="password" class="form-control" placeholder="Mot de passe">
+    </div>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <a href="#" class="text-light small fw-semibold">Mot de passe oublié ?</a>
+    </div>
+    <button class="btn btn-light w-100 py-2 fw-semibold" (click)="onLogin()">Se connecter</button>
+
+    <div *ngIf="error" class="text-danger mt-3">{{ error }}</div>
+
+    <div class="mt-4 small text-white">
+      Pas encore de compte ? <a routerLink="/join" class="text-light fw-semibold">Créer un compte</a>
+    </div>
+  </div>
+</div>

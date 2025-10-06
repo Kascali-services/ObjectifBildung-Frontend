@@ -41,10 +41,11 @@
 
       <div class="d-flex align-items-center">
         <ng-container *ngIf="!isLogged; else userMenu">
-          <a href="#" class="btn btn-outline-primary me-3 fw-semibold px-3 py-2 rounded-pill"
-             (click)="toggleLogin()">
+          <button class="btn btn-outline-primary me-3 fw-semibold px-3 py-2 rounded-pill"
+                  (click)="navigateToLogin()">
             {{ translations.auth?.login || 'Connexion' }}
-          </a>
+          </button>
+
           <a href="#" class="btn btn-gradient text-white px-4 py-2 fw-semibold rounded-pill shadow-sm">
             {{ translations.auth?.join || 'Rejoindre' }}
           </a>
@@ -62,7 +63,7 @@
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item text-danger" href="#" (click)="toggleLogin()">
+              <li><a class="dropdown-item text-danger" href="#" (click)="logout()">
                 {{ translations.auth?.logout || 'Déconnexion' }}
               </a></li>
             </ul>
