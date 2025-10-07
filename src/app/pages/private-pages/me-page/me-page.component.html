@@ -1,0 +1,15 @@
+<div class="me-wrapper">
+  <div class="card user-card">
+    <img src="assets/images/woman-avatar.jpg" alt="Avatar" class="user-avatar">
+    <h3>{{ user?.firstname }} {{ user?.lastname }}</h3>
+    <p>{{ user?.email }}</p>
+
+    <button class="btn btn-outline-primary px-4" *ngIf="user">
+      Modifier le profil
+    </button>
+
+    <div *ngIf="!user" class="text-muted mt-3">
+      Aucun utilisateur connecté.
+    </div>
+  </div>
+</div>

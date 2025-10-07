@@ -1,0 +1,74 @@
+/* Hero Section */
+.home-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #007bff, #6610f2);
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.home-hero {
+  max-width: 800px;
+}
+
+.highlight {
+  color: #ffd700;
+}
+
+.btn-light {
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Services Section */
+.services-section {
+  .card {
+    transition: all 0.3s ease;
+    border-radius: 1rem;
+
+    .icon {
+      font-size: 2.5rem;
+      color: #007bff;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+/* Mission Section */
+.mission-section {
+  background: linear-gradient(135deg, #6610f2, #007bff);
+  padding: 4rem 1.5rem;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 4rem 1.5rem;
+
+  .btn-primary {
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home-hero h1 {
+    font-size: 2rem;
+  }
+
+  .services-section .card {
+    margin-bottom: 1rem;
+  }
+}
