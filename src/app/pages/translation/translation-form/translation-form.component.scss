@@ -1,0 +1,32 @@
+.translation-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #007bff, #6610f2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    max-width: 900px;
+  }
+
+  h2 {
+    color: #007bff;
+  }
+
+  .form-label {
+    color: #333;
+  }
+
+  .btn-primary {
+    transition: all 0.3s ease;
+    &:hover {
+      transform: translateY(-2px);
+      background-color: #0056b3;
+    }
+  }
+
+  .alert-info {
+    background-color: #e7f3ff;
+    border-color: #b6daff;
+  }
+}
