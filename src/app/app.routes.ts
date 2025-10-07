@@ -4,11 +4,13 @@ import {LonginPageComponent} from './pages/auth-pages/longin-page/longin-page.co
 import {RegisterComponent} from './pages/auth-pages/register-page/register-page.component';
 import {MePageComponent} from './pages/private-pages/me-page/me-page.component';
 import {AuthGuard} from './core/guards/auth.guard';
+import {TranslationFormComponent} from './pages/translation/translation-form/translation-form.component';
 
 export const routes: Routes = [
   {path: '', component: HomePageComponent},
   {path: 'login', component: LonginPageComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'translation', component: TranslationFormComponent},
   {path: 'me', component: MePageComponent, canActivate: [AuthGuard]},
   {path: '**', redirectTo: ''} // Wildcard route for a 404 page (optional)
 ];

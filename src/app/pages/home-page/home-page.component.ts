@@ -30,22 +30,26 @@ export class HomePageComponent implements AfterViewInit {
     {
       title: 'Traduction de documents',
       icon: 'bi bi-translate',
-      description: 'Traduisez vos documents officiels entre le français, l’anglais et l’allemand avec précision et rapidité.'
+      description: 'Traduisez vos documents officiels entre le français, l’anglais et l’allemand avec précision et rapidité.',
+      redirect: '/translation'
     },
     {
       title: 'Générateur de CV en allemand',
       icon: 'bi bi-file-earmark-person',
-      description: 'Créez un CV professionnel adapté aux standards allemands en quelques clics.'
+      description: 'Créez un CV professionnel adapté aux standards allemands en quelques clics.',
+      redirect: '/cv-generator'
     },
     {
       title: 'Préparation aux examens Goethe',
       icon: 'bi bi-journal-text',
-      description: 'Entraînez-vous efficacement aux examens A1 à B2 (Deutsch als Fremdsprache) avec nos outils et ressources.'
+      description: 'Entraînez-vous efficacement aux examens A1 à B2 (Deutsch als Fremdsprache) avec nos outils et ressources.',
+      redirect: '/goethe-prep'
     },
     {
       title: 'Assistance à la recherche de place (Ausbildung)',
       icon: 'bi bi-briefcase',
-      description: 'Bénéficiez d’une orientation et d’une aide personnalisée pour trouver un contrat de formation en Allemagne.'
+      description: 'Bénéficiez d’une orientation et d’une aide personnalisée pour trouver un contrat de formation en Allemagne.',
+      redirect: '/ausbildung-help'
     }
   ];
 }
