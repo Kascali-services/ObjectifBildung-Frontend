@@ -1,0 +1,66 @@
+.me-wrapper {
+  min-height: 70vh; // ton besoin : minimum 80% de la hauteur de la fenêtre
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 2rem;
+}
+
+/* Carte utilisateur */
+.user-card {
+  max-width: 420px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.user-avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 3px solid #007bff;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+/* Nom et email */
+h3 {
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+p {
+  color: #6c757d;
+}
+
+/* Bouton */
+button {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #007bff;
+    color: white;
+    transform: translateY(-2px);
+  }
+}
+
+/* Responsif */
+@media (max-width: 576px) {
+  .me-wrapper {
+    padding: 1rem;
+  }
+
+  .user-card {
+    padding: 1.5rem;
+  }
+
+  .user-avatar {
+    width: 80px;
+    height: 80px;
+  }
+}
