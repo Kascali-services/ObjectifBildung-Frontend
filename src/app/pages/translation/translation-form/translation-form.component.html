@@ -1,0 +1,83 @@
+<div class="translation-wrapper py-5">
+  <div class="container bg-white shadow p-5 rounded-4">
+    <h2 class="fw-bold text-center mb-4">Service de Traduction</h2>
+
+    <form (ngSubmit)="submit()" class="row g-4">
+      <!-- Pays -->
+      <div class="col-md-6">
+        <label class="form-label fw-semibold">Pays</label>
+        <select class="form-select" [(ngModel)]="request.country" name="country" (change)="onCountryChange()">
+          <option value="">-- Sélectionnez un pays --</option>
+          <option *ngFor="let c of countries" [value]="c.id">{{ c.name }}</option>
+        </select>
+      </div>
+
+      <!-- Type de document -->
+      <div class="col-md-6">
+        <label class="form-label fw-semibold">Type de document</label>
+        <select class="form-select" [(ngModel)]="request.documentType" name="documentType" (change)="onTypeChange()">
+          <option value="">-- Sélectionnez un type --</option>
+          <option *ngFor="let t of documentTypes" [value]="t.id">{{ t.label }}</option>
+        </select>
+      </div>
+
+      <!-- Diplôme spécifique -->
+      <div class="col-md-6" *ngIf="request.documentType === 'diplome'">
+        <label class="form-label fw-semibold">Document spécifique</label>
+        <select class="form-select" [(ngModel)]="request.specificDocument" name="specificDocument">
+          <option value="">-- Sélectionnez un document --</option>
+          <option *ngFor="let doc of documents" [value]="doc.id">{{ doc.name }}</option>
+          <option value="autre">Autre</option>
+        </select>
+      </div>
+
+      <!-- Description -->
+      <div class="col-md-6" *ngIf="request.specificDocument === 'autre' || request.documentType !== 'diplome'">
+        <label class="form-label fw-semibold">Description</label>
+        <input type="text" class="form-control" [(ngModel)]="request.description" name="description" placeholder="Décrivez le document">
+      </div>
+
+      <!-- Langues -->
+      <div class="col-md-6">
+        <label class="form-label fw-semibold">Langue d’origine</label>
+        <select class="form-select" [(ngModel)]="request.sourceLang" name="sourceLang">
+          <option value="">-- Choisir --</option>
+          <option value="fr">Français</option>
+          <option value="en">Anglais</option>
+          <option value="de">Allemand</option>
+        </select>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label fw-semibold">Langue de traduction</label>
+        <select class="form-select" [(ngModel)]="request.targetLang" name="targetLang">
+          <option value="">-- Choisir --</option>
+          <option value="fr">Français</option>
+          <option value="en">Anglais</option>
+          <option value="de">Allemand</option>
+        </select>
+      </div>
+
+      <!-- Fichier -->
+      <div class="col-md-6">
+        <label class="form-label fw-semibold">Fichier à traduire</label>
+        <input type="file" class="form-control" (change)="onFileSelected($event)">
+      </div>
+
+      <!-- Prix -->
+      <div class="col-md-6 d-flex align-items-end">
+        <button type="button" class="btn btn-outline-primary w-100" (click)="calculatePrice()">Calculer le prix</button>
+      </div>
+
+      <!-- Résultat -->
+      <div class="col-12" *ngIf="price > 0">
+        <div class="alert alert-info text-center fw-semibold">Prix estimé : {{ price }} €</div>
+      </div>
+
+      <!-- Soumettre -->
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-primary px-4 py-2 rounded-pill shadow">Soumettre</button>
+      </div>
+    </form>
+  </div>
+</div>
